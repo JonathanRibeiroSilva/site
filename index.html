@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="main.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Faça sua denúncia</h1>
+        <p>Os campos sinalizados com asterisco * são de preenchimento obrigatório</p>
+        
+        <form action="#">
+            <fieldset>
+                <legend>Destinatário</legend>
+                <label for="orgao">Órgão para o qual você quer enviar sua manifestação *</label>
+                <input type="text" id="orgao" name="orgao" placeholder="Comece a digitar o nome ou a sigla do órgão para selecioná-lo na lista que será exibida">
+                <label for="filtro">Filtre por esfera (federal, estadual ou municipal)</label>
+                <input type="text" id="filtro" name="filtro">
+            </fieldset>
+
+            <fieldset>
+                <legend>Descrição</legend>
+                <label for="descricao">Fale aqui *</label>
+                <textarea id="descricao" name="descricao" rows="4" placeholder="Descreva abaixo o conteúdo de sua manifestação. Seja claro e objetivo. Informações pessoais, inclusive identificação, não precisam ser inseridas a não ser que sejam essenciais para a caracterização da manifestação."></textarea>
+                <a href="#" class="anexos">Incluir Anexos</a>
+            </fieldset>
+
+            <fieldset>
+                <legend>Canal de entrada *</legend>
+                <label for="canal">Canal</label>
+                <select id="canal" name="canal">
+                    <option value="internet">Internet</option>
+                    <!-- Other options can be added here -->
+                </select>
+            </fieldset>
+
+            <fieldset>
+                <legend>Local do Fato</legend>
+                <div class="row">
+                    <div class="col-md-4">
+                        <label for="uf">UF</label>
+                        <input type="text" id="uf" name="uf">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="municipio">Município</label>
+                        <input type="text" id="municipio" name="municipio">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="local">Local</label>
+                        <input type="text" id="local" name="local" placeholder="Exemplo: posto de saúde nº 03">
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Quais são os envolvidos no fato?</legend>
+                <div class="row">
+                    <div class="col-md-4">
+                        <input type="text" id="nome-envolvido" placeholder="Nome do Envolvido">
+                    </div>
+                    <div class="col-md-4">
+                        <input type="text" id="cpf-envolvido" placeholder="CPF do Envolvido">
+                    </div>
+                    <div class="col-md-4">
+                        <input type="text" id="orgao-envolvido" placeholder="Órgão/Empresa">
+                    </div>
+                </div>
+            </fieldset>
+
+            <div class="d-flex justify-content-between">
+                <button type="button" class="voltar">Voltar</button>
+                <button type="button" class="avancar" onclick="teste()">Avançar</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="container my-5">
+        <table>
+            <thead>
+                <tr>
+                    <th>Órgão</th>
+                    <th>Filtro</th>
+                    <th>Descrição</th>
+                    <th>Canal</th>
+                    <th>UF</th>
+                    <th>Município</th>
+                    <th>Local</th>
+                    <th>Nome do Envolvido</th>
+                    <th>CPF do Envolvido</th>
+                    <th>Órgão Envolvido</th>
+                    <th></th> <!-- Textless header for actions column -->
+                </tr>
+            </thead>
+            <tbody id="tabela">
+     
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
